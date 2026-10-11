@@ -1,0 +1,11 @@
+# SEAIT E-Learning — Apache config for /public
+Options -Indexes
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"
+
+# Prevent access to PHP files in upload folder
+<FilesMatch "\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

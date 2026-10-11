@@ -1,0 +1,79 @@
+/* SEAIT E-Learning — Custom overrides (Tailwind-compatible) */
+
+/* Print styles */
+@media print {
+    #sidebar,
+    #sidebar-overlay,
+    header,
+    .no-print { display: none !important; }
+    .md\:ml-64 { margin-left: 0 !important; }
+    body { background: white !important; font-size: 12px !important; }
+    .rounded-2xl { border-radius: 0 !important; }
+    .shadow-sm, .shadow-lg { box-shadow: none !important; }
+    a { text-decoration: none !important; color: inherit !important; }
+}
+
+/* Smooth sidebar on mobile */
+#sidebar {
+    will-change: transform;
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar-scroll::-webkit-scrollbar { width: 4px; }
+.sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+.sidebar-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25); border-radius: 2px; }
+
+/* Circular progress ring transition */
+.progress-ring__circle {
+    transition: stroke-dashoffset 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 0.25s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Skill tree connector */
+.skill-connector {
+    width: 2px;
+    height: 32px;
+    margin: 0 auto;
+}
+
+/* Line-clamp utilities */
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+}
+
+/* Table striped */
+tbody tr:nth-child(even) {
+    background-color: rgba(249, 250, 251, 0.5);
+}
+
+/* Active nav item pulse on mobile */
+@media (max-width: 768px) {
+    #sidebar.open {
+        box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+    }
+}

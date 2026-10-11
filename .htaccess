@@ -1,0 +1,22 @@
+# SEAIT E-Learning — Root Apache config
+Options -Indexes
+
+# Block direct access to sensitive folders
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block access to config, core, database folders
+    RewriteRule ^(config|core|database)/ - [F,L]
+
+    # Route / to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^$ index.php [L]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

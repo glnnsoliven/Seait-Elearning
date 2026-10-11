@@ -1,0 +1,10 @@
+5.1 Farmer Profile Module – Stores farmer and farm details in one place.c
+ 5.2 Income and Expense Tracking – Records money earned and spent to track earnings. c
+5.3 Market Price Monitoring – Shows current prices to help farmers sell at the right time. c
+5.4 Earnings Forecasting – Predicts future income based on past data. 
+5.5 Crop Advisory Module – Suggests profitable crops and best planting times.
+ 5.6 Financial Assistance Tracker – Helps farmers track loans and subsidies.
+
+
+
+link RRL local,foriegn and RRS local,foriegn for Farmer earnings and income stability
